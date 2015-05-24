@@ -549,6 +549,20 @@ a:hover {
   font-size: 12px;
   margin-bottom: 40px;
 }
+label.error {
+  color: #ff0000;
+  display: block;
+  margin-top: 4px;
+}
+.message-con {
+  border: 1px solid #ccc;
+  margin-right: 430px;
+  padding: 5px 15px;
+  background: #FFEACB;
+  border-radius: 5px;
+  display: none;
+  font-size: 13px;
+}
 .header-login {
   padding-top: 34px;
   color: #0066ff;

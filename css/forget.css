@@ -549,10 +549,29 @@ a:hover {
   font-size: 12px;
   margin-bottom: 40px;
 }
+label.error {
+  color: #ff0000;
+  display: block;
+  margin-top: 4px;
+}
+.message-con {
+  border: 1px solid #ccc;
+  margin-right: 430px;
+  padding: 5px 15px;
+  background: #FFEACB;
+  border-radius: 5px;
+  display: none;
+  font-size: 13px;
+}
 .forget-top {
   background: url("../images/forget.png") no-repeat;
   width: 932px;
   height: 201px;
+}
+.forget-top2{
+  background: url("../images/mail.jpg") no-repeat;
+  width: 933px;
+  height: 148px;
 }
 .forget {
   background: #fff;
@@ -600,4 +619,30 @@ a:hover {
   position: relative;
   top: 1px;
   margin-right: 5px;
+}
+.mail-text{
+  font-size: 18px;
+  text-align: center;
+  color:#333333;
+}
+.mail-text span{
+  color:#0066ff;
+  text-decoration: underline;
+}
+.mail-btn{
+  background: #69b3f2;
+  color:#fff;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 260px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 60px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.mail-con{
+  padding-bottom: 200px;
 }

@@ -38,24 +38,27 @@
         <div class="login-form-con clearfix">
             <form class="login-form">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="用户名">
-                    <input type="text" class="form-control" placeholder="注册手机">
+                    <input type="text" class="form-control" name="username" placeholder="用户名">
+                    <input type="text" class="form-control" name="phone" placeholder="注册手机">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control length" placeholder="登陆密码">
+                    <input type="text" class="form-control length" name="password" placeholder="登陆密码">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control length" placeholder="确认密码">
+                    <input type="text" class="form-control length" name="repassword" placeholder="确认密码">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="验证码">
+                    <input type="text" class="form-control" name="code" placeholder="验证码">
                     <img src="images/code.png" class="code">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control length" placeholder="邮箱">
+                    <input type="text" class="form-control length" name="email" placeholder="邮箱">
                 </div>
                 <div class="form-group form-ck">
                     <label><input type="checkbox">我已经阅读并同意遵守<a href="#">《Hawgent皓骏用户服务协议》</a></label>
+                </div>
+                <div class="message-con">
+
                 </div>
                 <div class="form-group">
                     <button type="button" class="btn btn-login-btn">注册</button>
@@ -75,6 +78,68 @@
     广州市越秀区桂花岗东1号广州大学北8号<br>
     粤ICP备12004385号
 </div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/valid-weigdt.js"></script>
+<script>
 
+    $(".btn-login-btn").click(function () {
+        if(!$(".login-form").valid()){
+            return false;
+        }
+    });
+
+    $(".login-form").validate({
+        ignore: ":not('.form-control')",
+        rules:{
+            username:{
+                required:true,
+                rangelength:[6,12]
+            },
+            phone:{
+                required:true,
+                phone:true
+            },
+            password:{
+                required:true,
+                rangelength:[6,12]
+            },
+            repassword:{
+                required:true,
+                rangelength:[6,12]
+            },
+            code:{
+                required:true
+            },
+            email:{
+                required:true,
+                email:true
+            }
+        },
+        messages:{
+            username:{
+                required:"请输入用户名"
+            },
+            phone:{
+                required:"请输入注册手机"
+            },
+            password:{
+                required:"请输入登陆密码"
+            },
+            repassword:{
+                required:"请输入确认密码"
+            },
+            code:{
+                required:"请输入验证码"
+            },
+            email:{
+                required:"请输入邮箱",
+                email:"请输入正确的邮箱"
+            }
+        },
+        errorLabelContainer:".message-con"
+    })
+
+</script>
 </body>
 </html>
